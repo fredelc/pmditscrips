@@ -1,0 +1,31 @@
+How to Perform Maintenance on Exchange 2010 DAG Node
+August 27, 2013seneejLeave a commentGo to comments
+The best practice is to put the exchange DAG node in maintenance mode when performing any type of software or hardware maintenance. This involves moving all active databases off the server and blocking active databases from moving to the server.Please refer to the following steps:
+
+1. On the DAG member server, navigate to the script folder, by default under “C:\Program Files\Microsoft\Exchange Server\V14\Scripts”:
+
+2. Use script “StartDagServerMaintenance” to put the DAG member server into maintenance mode:
+
+.\StartDagServerMaintenance.ps1 –serverName “DAGnode2”
+
+Note: Please replace “DAGnode2” with the DAG member server name which you want to put into maintenance mode.
+
+3.After that, the DAG member server will be put into maintenance mode, the script will do the following
+
+Move all the active databases off of the server
+Set the “DatabaseCopyAutoActivationPolicy” to Blocked on the mailbox server, thus it will block databases from moving to that server;
+ake sure all critical DAG support functionality (for example, the Primary Active Manager PAM role) that might be on the server is moved to another server, and blocked from moving back to the server.
+
+4. After finish your maintenance activities bring the DAG member out of maintenance mode. So use the “StopDagServerMaintenance” scripts which is also reside in the scripts folder to stop maintenance mode on DAG Node
+
+5.Navigate to the script folder again , by default under “C:\Program Files\Microsoft\Exchange Server\V14\Scripts”:
+
+.\StopDagServerMaintenance.ps1 -serverName “DAGnode2”
+
+Above script “StopDagServerMaintenance” is used to stop the maintenance for the specified server
+
+More info : http://technet.microsoft.com/en-us/library/dd298065(v=exchg.150).aspx#Pm
+
+
+
+Get-DatabaseAvailabilityGroup DAG -Status | fl

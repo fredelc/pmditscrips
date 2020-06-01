@@ -1,0 +1,3 @@
+Get-Recipient legal@primaryasset.co.za
+
+get-recipient -filter {emailaddresses -like "*complaint*"}

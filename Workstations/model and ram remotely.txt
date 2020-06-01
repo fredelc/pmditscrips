@@ -1,0 +1,4 @@
+wmic /NODE: saml079 bios get serialnumber
+
+wmic /node: saml079 computersystem get model,name,manufacturer,systemtype
+

@@ -1,0 +1,22 @@
+https://www.petri.com/manage-windows-updates-with-powershell-module
+Download module from https://gallery.technet.microsoft.com/scriptcenter/2d191bcd-3308-4edd-9de2-88dff796b0bc 
+Module can be installed manualy by downloading Zip file and extract in two places:
+
+%USERPROFILE%\Documents\WindowsPowerShell\Modules
+%WINDIR%\System32\WindowsPowerShell\v1.0\Modules
+
+Start elevated PS
+
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Unrestricted -Force
+Install-Module -Name PSWindowsUpdate
+Import-Module PSWindowsUpdate
+Get-WindowsUpdate
+OR
+Get-WUlist -MicrosoftUpdate
+Install-WindowsUpdate -MicrosoftUpdate -AcceptAll
+
+#To install specific KB
+Install-WindowsUpdate -KBArticleID 'KB4532098'
+
+
+

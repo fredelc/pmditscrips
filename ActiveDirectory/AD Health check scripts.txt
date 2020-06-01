@@ -1,0 +1,20 @@
+Dcdiag.exe /v >> c:temppre_dcdiag.txt
+This is a must and will always tell you if there is trouble with your DCs and/or services associated with it
+
+Netdiag.exe /v >> c:temppre_Netdiag.txt
+This will let me know if there are issues with the networking components on the DC.  This along with the post test also is a quick easy way to ensure the patch I just installed is really installed (just check the top of the log)
+
+Netsh dhcp show server >> c:temppre_dhcp.txt
+Some may not do this but I”ve felt the pain of a DHCP server somehow not being authorized after a patch.  This allows me verify the server count and names.
+
+Repadmin /showreps >> c:temppre_rep_partners.txt
+This shows all my replication and if it was successful or not.  Just be aware that Global Catalogs will have more info here than a normal domain controller.
+
+repadmin /replsum /errorsonly >> c:temppre_repadmin_err.txt
+This is the one that always takes forever but will let you know who you are having issues replicating with.
+
+DCDiag /Test:DNS
+
+
+cd "C:\IT ADmin\ADHealthCheck"
+.\ADHealthCheck.ps1

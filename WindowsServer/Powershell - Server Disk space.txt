@@ -1,0 +1,2 @@
+$disk = ([wmi]"\\pmsvrfs1\root\cimv2:Win32_logicalDisk.DeviceID='e:'")
+"Remotecomputer E: has {0:#.0} GB free of {1:#.0} GB Total" -f ($disk.FreeSpace/1GB),($disk.Size/1GB) | write-output

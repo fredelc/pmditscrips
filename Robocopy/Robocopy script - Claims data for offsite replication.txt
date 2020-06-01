@@ -1,0 +1,22 @@
+##Robocopy script
+
+robocopy "\\pmsvrfile1\User_Shares\Claims\Prime Motor THRIFT-ACB\Investigators\Investigation Reports" E:\ /e /COPYALL /log:"C:\Robocopy_Logs\robocopy.log" /tee
+
+robocopy "\\pmsvrfile1\User_Shares\Claims\Living Legacy and Hospi team folders" E:\ /e /COPYALL /log+:"C:\Robocopy_Logs\robocopy.log" /tee
+
+robocopy "\\pmsvrfile1\User_Shares\Claims\Prime Motor THRIFT-ACB\Repudiation letters\Edwin\Copy of Scene Register v1 New 7-9-16.xlsx" E:\ /e /COPYALL /log+:"C:\Robocopy_Logs\robocopy.log" /tee
+
+robocopy "\\pmsvrfile1\User_Shares\Claims\3rd Party & Recoveries Claims\3RD PARTY CLAIMS\QV" E:\ /e /COPYALL /log+:"C:\Robocopy_Logs\robocopy.log" /tee
+
+robocopy "\\pmsvrfile1\User_Shares\Claims\3rd Party & Recoveries Claims\Third Party Recovery Folder" E:\ /e /COPYALL /log+:"C:\Robocopy_Logs\robocopy.log" /tee
+
+robocopy "\\pmsvrfile1\User_Shares\Claims\Living Legacy and Hospi team folders" E:\ /e /COPYALL /log+:"C:\Robocopy_Logs\robocopy.log" /tee
+
+robocopy "\\pmsvrfile1\User_Shares\Claims\Claims Assistant" E:\ /e /COPYALL /log+:"C:\Robocopy_Logs\robocopy.log" /tee
+
+robocopy "\\pmsvrfile1\User_Shares\Claims\Assessments" E:\ /e /COPYALL /log+:"C:\Robocopy_Logs\robocopy.log" /tee
+
+robocopy "\\pmsvrfile1\User_Shares\Claims\Assessors appointment and documentation" E:\ /e /COPYALL /log+:"C:\Robocopy_Logs\robocopy.log" /tee
+
+
+pause

@@ -1,0 +1,13 @@
+Upgrade to latest Powershell - Framework 5.1
+
+Copy the Posh-WSUS folder to %ProgramFiles%\WindowsPowerShell\Modules
+
+To install using elevated credentials:
+Install-Module -scope AllUsers PoshWSUS
+
+Import-Module PoshWSUS
+
+
+
+
+

@@ -1,0 +1,44 @@
+Get-MailboxAutoReplyConfiguration jengelbrecht
+
+
+Set-MailboxAutoReplyConfiguration jengelbrecht -AutoReplyState enabled -ExternalAudience all -ExternalMessage "Please note that Jason Engelbrecht is no longer with Prime Meridian Direct. In future, please email Fredel Coetzee at fc@primaryasset.co.za. Thank you."
+
+
+Set-MailboxAutoReplyConfiguration "fc" -AutoReplyState Disabled -ExternalMessage $null -InternalMessage $null
+
+
+Set-MailboxAutoReplyConfiguration given -AutoReplyState enabled -ExternalAudience all -ExternalMessage all -InternalMessage "Please note that I am out of the office for the week of 6 to 10 March 2017 and will be back in the office on Monday, 13 March 2017. For any IT requests, please email itsupport@primaryasset.co.za."
+
+
+##Use this for NBU staff:
+
+Set-MailboxAutoReplyConfiguration natasha.makgabo -AutoReplyState enabled -ExternalAudience all -ExternalMessage “Thank you for your email. The user you have emailed, is unfortunately no longer with PMD. In future, please contact clientservices@primaryasset.co.za or dial 011-745-7800 for assistance.” -InternalMessage “Thank you for your email. The user you have emailed, is unfortunately no longer with PMD. In future, please contact clientservices@primaryasset.co.za or dial 011-745-7800 for assistance.”
+
+“Thank you for your email. The user you have emailed, is unfortunately no longer with PMD. In future, please contact clientservices@primaryasset.co.za or dial 011-745-7800 for assistance.”
+
+
+
+<div style="font-family:Tahoma; font-size:13px"><font face="Arial" size="3">Thank you for your mail.
+ The IT Team will assist as soon as possible.&nbsp;</font>
+<div><font face="Arial" size="3"><br>
+</font></div>
+<div><font face="Arial"><font size="3">Have a PRIME day!</font><br>
+
+
+Thank you for your mail.
+The IT Team will assist as soon as possible.
+Click here (https://www.surveymonkey.com/r/LTQB5ZR) to fill in our short survey regarding your experience with IT on this Service Request. If you feel that you are dissatisfied and want to escalate this service request, or for positive feedback, please email the IT Manager, Fredel Coetzee on fc@primaryasset.co.za. 
+
+
+Set-MailboxAutoReplyConfiguration jengelbrecht -AutoReplyState enabled -ExternalAudience all -ExternalMessage "Please note that Jason Engelbrecht is no longer with Prime Meridian Direct. In future, please email Fredel Coetzee at fc@primaryasset.co.za. Thank you."
+
+
+#Given
+Set-MailboxAutoReplyConfiguration given -AutoReplyState enabled -ExternalAudience all -ExternalMessage “Thank you for your email. I am currently on annual leave from 14 April 2017 and will return to the office on the 2nd of May 2017. Please email itsupport@primaryasset.co.za for assistance or speak to Fredel Coetzee.” -InternalMessage “Thank you for your email. I am currently on annual leave from 14 April 2017 and will return to the office on the 2nd of May 2017. Please email itsupport@primaryasset.co.za for assistance or speak to Fredel Coetzee.”
+
+
+
+
+
+
+Set-MailboxAutoReplyConfiguration darren.venter -AutoReplyState enabled -ExternalAudience all -ExternalMessage "Please note that I will be out of the office untill Monday, 18 September 2017." -InternalMessage "Please note that I will be out of the office untill Monday, 18 September 2017."

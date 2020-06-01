@@ -1,0 +1,32 @@
+How to set arhiving on a mailbox
+
+https://gcits.com/knowledge-base/working-archive-policies-office-365-skykick/
+
+
+#Run the following PowerShell cmdlet
+New-RetentionPolicyTag "Arhive older than 30 days" -Type All -RetentionEnabled $true -AgeLimitForRetention 30 -RetentionAction MoveToArchive
+
+#Create the new Retention Policy and link the tags
+New-RetentionPolicy "One Tag Policy 30Days" -RetentionPolicyTagLinks "Arhive older than 30 days"
+
+#Assign a retention policy to a user
+Set-Mailbox -Identity photos@primemeridian.co.za -RetentionPolicy "One Tag Policy 30Days"
+
+#Confirm the Retention Policy was applied correctly by running:
+Get-Mailbox -Identity photos@primemeridian.co.za | ft Name,RetentionPolicy
+
+#Enable Archiving on a mailbox.
+Enable-Mailbox -Identity photos@primemeridian.co.za -Archive
+
+#Ensure the Archive is running.
+Get-MailboxStatistics -identity photos@primemeridian.co.za -Archive
+
+#To start the archive, run the following cmdlet.
+Start-ManagedFolderAssistant photos@primemeridian.co.za
+
+#Run the Get-MailboxStatistics cmdlet a few times more, you’ll see the ItemCount increasing. 
+Get-MailboxStatistics -identity photos@primemeridian.co.za -Archive
+
+
+
+

@@ -1,0 +1,1 @@
+robocopy "E:\User_Shares\Claims\Prime Motor THRIFT-ACB\Investigators\Investigation Reports" "\\pmdnas001\Claims\Investigation Reports" /e /MIR /COPY:DATSOU /DCOPY:T /r:1 /w:5 /log+:"C:\Robocopy_Logs_NAS\robocopy-InvestigationReports-NASCOPY-%date%.log" /V /tee

@@ -1,0 +1,2 @@
+Get-Recipient -Identity "claims client services"| select -ExpandProperty emailaddresses  | fl 
+

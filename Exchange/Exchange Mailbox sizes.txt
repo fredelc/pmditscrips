@@ -1,0 +1,7 @@
+Get-MailboxDatabase "<insert database name or don’t enter one for all DB’s>" | Get-MailboxStatistics | Sort totalitemsize -desc | ft displayname, totalitemsize, itemcount
+
+Get-MailboxDatabase | Get-MailboxStatistics | Sort displayname | ft displayname, totalitemsize
+
+Get-MailboxDatabase | Get-MailboxStatistics | Sort totalitemsize | ft displayname, totalitemsize
+
+

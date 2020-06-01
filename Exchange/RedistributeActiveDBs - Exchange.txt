@@ -1,0 +1,5 @@
+[PS] C:\Program Files\Microsoft\Exchange Server\V14\Scripts>.\RedistributeActiveDatabases.ps1 -DagName pmdag -BalanceDbsByActivationPreference
+
+"C:\Program Files\Microsoft\Exchange Server\V14\Scripts"
+
+.\RedistributeActiveDatabases.ps1 -DagName pmdag -BalanceDbsByActivationPreference

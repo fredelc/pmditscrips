@@ -1,0 +1,44 @@
+To connect via elevated Powershell:
+
+$UserCredential = Get-Credential
+
+Set-ExecutionPolicy RemoteSigned
+
+$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $UserCredential -Authentication Basic -AllowRedirection
+
+Import-PSSession $Session -DisableNameChecking
+
+After session:
+Remove-PSSession $Session
+
+============================================================================================================================
+#log in with MFA:
+
+$office365UserPrincipalName = "fc@primaryasset.co.za"
+$PSExoPowershellModuleRoot = (Get-ChildItem -Path $env:userprofile -Filter CreateExoPSSession.ps1 -Recurse -ErrorAction SilentlyContinue -Force | Select -Last 1).DirectoryName
+$ExoPowershellModule = "Microsoft.Exchange.Management.ExoPowershellModule.dll";
+$ModulePath = [System.IO.Path]::Combine($PSExoPowershellModuleRoot, $ExoPowershellModule);
+
+Import-Module $ModulePath;
+
+$Office365PSSession = New-ExoPSSession -UserPrincipalName $office365UserPrincipalName -ConnectionUri "https://outlook.office365.com/powershell-liveid/"
+
+Import-PSSession $Office365PSSession
+
+======================================================
+
+Office365 Powershell:
+Install-Module MSOnline (first time only)
+Import-Module MSOnline (first time only)
+Connect-MsolScervice
+
+Exchange Online Powershell (EXOPS)
+Install-Module ExchangeOnlineShell
+Import-Module ExchangeOnlineShell
+Connect-ExchangeOnlineShell
+
+n Internet Explorer or Edge, open the Exchange admin center (EAC) for your Exchange Online organization (Google Chrome or Mozilla Firefox won't work). For instructions, see Exchange Admin Center in Exchange Online.
+
+In the EAC, go to Hybrid > Setup and click the appropriate Configure button to download the Exchange Online Remote PowerShell Module for multi-factor authentication.
+
+This only works from IE.

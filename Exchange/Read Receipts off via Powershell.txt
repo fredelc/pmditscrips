@@ -1,0 +1,1 @@
+Set-MailboxMessageConfiguration "Content Examination Legal" -ReadReceiptResponse NeverSend

@@ -1,0 +1,11 @@
+Get-Module -Listavailable
+
+get-adgroup -filter * | sort name | select Name
+
+Get-AdGroupMember -identity HR Full
+
+Get-ADGroupMember -identity “HR Full” | select name | Export-csv -path C:\Output\Groupmembers.csv -NoTypeInformation
+
+
+Get-AdGroupMember -identity Webfilter_7AM-7PM | select name
+

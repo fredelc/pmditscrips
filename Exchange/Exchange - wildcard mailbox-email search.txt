@@ -1,0 +1,3 @@
+Get-Mailbox *search*
+
+Get-Recipient *search*

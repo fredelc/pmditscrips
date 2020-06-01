@@ -1,0 +1,5 @@
+esxcli system snmp set --communities YOUR_STRING
+esxcli system snmp set --enable true
+esxcli network firewall ruleset set --ruleset-id snmp --allowed-all true
+esxcli network firewall ruleset set --ruleset-id snmp --enabled true
+/etc/init.d/snmpd restart

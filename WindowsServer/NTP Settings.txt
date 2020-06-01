@@ -1,0 +1,14 @@
+## This is to make a server (PDC prefered) a reliable ntp server
+net stop w32time
+w32tm /config /syncfromflags:manual /manualpeerlist:"0.za.pool.ntp.org, 1.za.pool.ntp.org, 2.za.pool.ntp.org, 3.za.pool.ntp.org,"
+w32tm /config /reliable:yes
+net start w32time
+
+## This is to set a server to use the PDC as a time server
+net stop w32time
+w32tm /config /syncfromflags:domhier
+net start w32time
+
+
+##This is to check the NTP configuration 
+w32tm /query /configuration

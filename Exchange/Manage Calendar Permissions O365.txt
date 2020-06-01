@@ -1,0 +1,26 @@
+https://theitbros.com/add-calendar-permissions-in-office-365-via-powershell/
+
+From elevated PS:
+
+$LiveCred = Get-Credential
+
+$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://ps.outlook.com/powershell/ -Credential $LiveCred -Authentication Basic -AllowRedirection
+
+Import-PSSession $Session
+
+
+Get-MailboxFolderPermission dane.matthews:\calendar
+
+	OR
+
+Get-MailboxFolderPermission chantal@primemeridian.co.za:\calendar
+
+
+Add-MailboxFolderPermission -Identity dane.matthews:\calendar -user chane.edwards -AccessRights AvailabilityOnly
+
+
+
+ALWAYS disconnect session afterward:
+
+Remove-PSSession $Session
+

@@ -1,0 +1,7 @@
+(Get-WmiObject -Class Win32_Service -Filter "state = 'stopped' and startmode = 'auto'" |
+ Select-Object -ExpandProperty name) |
+Where-Object {(Get-ChildItem HKLM:\SYSTEM\CurrentControlSet\Services |
+ Where-Object {$_.property -contains "DelayedAutoStart"} |
+ Select-Object -ExpandProperty PSChildName) -notcontains $_} |
+Select-Object @{l='Computer Name';e={$env:computername}},
+ @{l='Service Name';e={$_}}

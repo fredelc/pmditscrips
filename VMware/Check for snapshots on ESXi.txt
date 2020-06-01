@@ -1,0 +1,3 @@
+find /vmfs/volumes/ -name *delta* -print
+
+run from CLI - ssh session

@@ -1,0 +1,8 @@
+cd "C:\Program Files\Microsoft\Exchange Server\V14\Scripts"
+
+.\Test-ExchangeServerHealth.ps1
+
+pause
+
+
+.\Test-ExchangeServerHealth.ps1 -ReportMode -SendEmail

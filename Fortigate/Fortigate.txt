@@ -1,0 +1,27 @@
+test ldap authentication:
+diag test authserver ldap "Windows_AD" fc Pa=@ssw0rd
+
+di vpn ssl stat
+
+fnsysctl cat  /var/run/sslvpnd.pid
+78
+
+fnsysctl ls  /var/run
+
+ 
+fnsysctl ps -ef 
+
+get system performance top
+
+dia sys kill 11 <PID>
+
+
+
+
+execute factory reset
+
+
+
+execute restore config usb config.conf
+
+

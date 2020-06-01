@@ -1,0 +1,4 @@
+Remove-MailboxPermission -Identity jengelbrecht -User 'daryl.mulder' -AccessRights FullAccess -InheritanceType All
+
+Add-MailboxPermission -Identity nina.kettlewell -User 'daryl.mulder' -AccessRights Fullaccess -InheritanceType all
+

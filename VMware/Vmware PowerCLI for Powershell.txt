@@ -1,0 +1,12 @@
+#connect to vcenter server via PowerCLI for Powershell
+#start VMware vSphere PowerCLI application from Start menu in windows
+
+#to connect
+Connect-VIServer -Server 172.16.0.29 -Protocol https -User administrator@vsphere.local -Password Man4P@@s16
+
+#get list of VMs
+Get-VM
+
+Get-VMHost | format-list -Property Name, PowerState, MemoryTotalGB, MemoryUsageGB, CpuTotalMhz, CpuUsageMhz
+
+
