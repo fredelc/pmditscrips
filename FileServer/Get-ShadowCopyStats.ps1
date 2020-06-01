@@ -2,10 +2,10 @@ Param(
 	$ServerName,
 	[Int32]$TimeOut = 500,
 	[switch]$ShowAllVolumes,
-	[string]$From = "FSadmins@company.tld",
-	[string]$To = "FSadmins@company.tld",
-	[string]$SMTPServer = "smtp.company.tld",
-	[string]$Subject = "Shadow Copy Stats.",
+	[string]$From = "itnotify@primaryasset.co.za",
+	[string]$To = "itnotify@primaryasset.co.za",
+	[string]$SMTPServer = "primaryasset-co-za.mail.protection.outlook.com",
+	[string]$Subject = "Shadow Copy Stats",
 	[switch]$EmailLog
 )
 Begin
@@ -28,7 +28,7 @@ Begin
 	$ShadowCopyStats = @()
 	Function GetShadowCopyStats
 	{	Param($Computer)
-		If(!$Computer){Write-Warning "You need to provide a computer to query!"; Return}
+        If(!$Computer){Write-Warning "You need to provide a computer to query!"; Return}
 		If($Computer.GetType().Name -match "ADComputer")
 		{If($Computer.dnsHostName -ne $Null){$Computer = $Computer.dnsHostName}Else{$Computer = $Computer.Name}}
 		Write-Progress -Activity "Retrieving snapshot statistics." -Status "Processing server: $Computer" -ID 1
