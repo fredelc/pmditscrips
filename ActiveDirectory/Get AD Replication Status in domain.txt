@@ -1,0 +1,3 @@
+Get-ADReplicationPartnerMetadata -Target samloans.local -Scope Domain
+
+Get-ADReplicationPartnerMetadata -Target "samloans.local" -Scope Domain -Filter * | Format-Table Server,LastReplicationAttempt,LastReplicationSuccess
