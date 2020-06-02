@@ -1,5 +1,5 @@
 Param(
-	$ServerName,
+	$ServerName = "pmsvrfs1",
 	[Int32]$TimeOut = 500,
 	[switch]$ShowAllVolumes,
 	[string]$From = "itnotify@primaryasset.co.za",
