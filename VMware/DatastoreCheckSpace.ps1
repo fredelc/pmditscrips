@@ -1,0 +1,2 @@
+Connect-VIServer -Server 172.16.0.29 -Protocol https -User administrator@vsphere.local -Password Man4P@@s16
+Get-Datastore | Select @{N="DataStoreName";E={$_.Name}},@{N="CapacityGB";E={$_.CapacityGB}},@{N="FreeSpace";E={$_.FreeSpaceGB}},@{N="Percentage Free Space(%)";E={[math]::Round(($_.FreeSpaceGB)/($_.CapacityGB)*100,2)}} | Where {$_."Percentage(<20%)" -le 20} | sort-object "Percentage Free Space(%)"
