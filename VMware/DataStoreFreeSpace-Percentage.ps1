@@ -15,7 +15,7 @@ If(!(Get-PSSnapin | Where {$_.Name -Eq "VMware.VimAutomation.Core"}))
 
 $VCServer = 172.16.0.29
 $vcUSERNAME = administrator@vsphere.local
-$vcPassword = M@n4P@@s16
+$vcPassword = Man4P@@s16
 $vccredential = New-Object System.Management.Automation.PSCredential ($vcusername, $vcPassword)
 
 
