@@ -1,0 +1,2 @@
+PS C:\Windows\system32> import-module msonline
+PS C:\Windows\system32> Connect-MsolService

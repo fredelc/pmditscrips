@@ -40,4 +40,4 @@ $allhosts += $hoststat
 
 }
 
-$allhosts | Select HostName, MemMax, MemAvg, MemMin, CPUMax, CPUAvg, CPUMin | Export-Csv "c:\Hosts.csv" –noTypeInformation
+#$allhosts | Select HostName, MemMax, MemAvg, MemMin, CPUMax, CPUAvg, CPUMin | Export-Csv "c:\Hosts.csv" –noTypeInformation
