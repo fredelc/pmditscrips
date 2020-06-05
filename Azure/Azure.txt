@@ -1,0 +1,15 @@
+Install Azure module
+find-module az* | Install-Module -Verbose
+
+Domain Join
+Add-Computer -DomainName samloans.local -DomainCredential (Get-Credential -message "Enter Admin Credential" -UserName samloans\fc)
+
+Restart-Computer
+
+To list resources based on a tag”
+Get-azResource -Tag @{environment=”test”} -resourcetype Microsoft.compute/virtualmachines  
+OR
+(Get-azResource -Tag @{environment=”test”} -resourcetype Microsoft.compute/virtualmachines ) .name
+To remove all resources with a specific tag:
+Get-azResource -Tag @{environment=”test”} -resourcetype Microsoft.compute/virtualmachines | remove-azresource -force
+
