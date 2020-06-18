@@ -1,0 +1,1 @@
+Get-VM * | Where {$_.ExtensionData.Summary.Runtime.ConnectionState -eq "orphaned"}

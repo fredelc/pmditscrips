@@ -1,0 +1,1 @@
+Search-Mailbox -Identity <username> -SearchQuery '(Received:09/20/2012..10/12/2012)' -deletecontent -force
