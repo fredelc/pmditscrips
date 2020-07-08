@@ -1,0 +1,15 @@
+#to show current running config
+sh run
+
+#run menu
+menu
+
+#copy firmware image form primary to secondary
+copy flash flash secondary 
+
+#set boot to secondary at next reboot
+boot set-default flash secondary
+
+#boot from secondary without settting it permanent
+boot system flash secondary
+

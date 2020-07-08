@@ -1,0 +1,40 @@
+import-csv "c:\temp\mailboxIdents.csv" | foreach {set-mailbox $_.ident -type Shared}
+
+$ident = import-csv "c:\temp\mailboxIdents.csv" | foreach 
+
+
+
+$computers = import-csv “c:tempcomputers.csv” 
+ForEach ($computer in $computers){
+$computername = $($computer.Computername)
+$ipaddress = $($computer.IPaddress)
+$office = $($computer.Office)
+$owner = $($computer.Owner)
+Write-host $computername $ipaddress $office $owner
+}
+
+
+Import-csv C:\temp\input.csv | foreach {
+$UPN = $_.userPrincipalName
+Set-Mailbox $UPN -Type “Shared”
+$MSOLSKU = (Get-MSOLUser -UserPrincipalName $UPN).Licenses[0].AccountSkuId
+Set-MsolUserLicense -UserPrincipalName $UPN -RemoveLicenses $MSOLSKU
+}
+
+
+
+Set-Mailbox -identity "Thembi Sibiya" -type shared
+
+$_.users = Import-CSV “c:\temp\mailboxIdents.csv” | foreach {Set-Mailbox -identity $_.Users -Type shared}
+
+get-mailbox -identity "Thembi Sibiya" | fl RecipientTypeDetails
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Import-CSV "c:\temp\mailboxIdents.csv" | foreach {Set-Mailbox -identity $_.Identity -Type shared}
+get-mailbox -identity "Thembi Sibiya" | fl RecipientTypeDetails
+
+
+#check type of mailbox (shared or full) for each mailbox ID in the CSV
+Import-CSV "c:\temp\mailboxIdents.csv" | foreach {get-mailbox -identity $_.Identity | fl Name, RecipientTypeDetails}
+
